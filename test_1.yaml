@@ -4,9 +4,7 @@
 # host => stores the host where the command should be run
 # user => the remote user
 #
-  - hosts: '{{ host }}'
-    remote_user: '{{ user }}'
-    gather_facts: yes
+  - gather_facts: yes
     tasks:
       - name: Copy ansible inventory file to client
         copy: src=/etc/ansible/hosts dest=/tmp/ansible_hosts
