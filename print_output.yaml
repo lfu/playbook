@@ -1,4 +1,4 @@
-- hosts: lucy_555
+- hosts: {{ host }}
   tasks:
     - name: Run ls.sh and output "ls /"
       script: ls.sh
