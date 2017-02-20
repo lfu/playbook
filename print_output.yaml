@@ -1,0 +1,7 @@
+- hosts: lucy_555
+  tasks:
+    - name: Run ls.sh and output "ls /"
+      script: ls.sh
+      register: out
+
+    - debug: var=out.stdout_lines
