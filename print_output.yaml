@@ -1,7 +1,7 @@
-- hosts: {{ host }}
+- hosts: '{{ host }}'
   tasks:
-    - name: Run ls.sh and output "ls /"
-      script: ls.sh
+    - name: print command output
+      command: ls /
       register: out
 
     - debug: var=out.stdout_lines
