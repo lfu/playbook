@@ -1,5 +1,4 @@
-- hosts: '{{ host }}'
-  tasks:
+- tasks:
     - name: print command output
       command: ls /
       register: out
