@@ -1,11 +1,5 @@
 ---
-# Takes 2 parameters that can be passed in as --extra-vars
-#
-# host => stores the host where the command should be run
-# user => the remote user
-#
-  - gather_facts: yes
-    tasks:
+  - tasks:
       - name: Copy ansible inventory file to client
         copy: src=/etc/ansible/hosts dest=/tmp/ansible_hosts
                 owner=root group=root mode=0644
