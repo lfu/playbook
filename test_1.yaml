@@ -4,7 +4,7 @@
 # host => stores the host where the command should be run
 # user => the remote user
 #
-  - hosts: all
+  - hosts: '{{ host }}'
     remote_user: '{{ user }}'
     gather_facts: yes
     tasks:
