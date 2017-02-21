@@ -22,7 +22,7 @@
       when: file_path.stat.exists == true
       
     - name: print out all parameters
-      command: '{{ remote_file }}'
+      command: '{{ remote_file_path }}'
       register: params
       
     - debug: var=params.stdout_lines
