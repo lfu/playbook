@@ -1,0 +1,9 @@
+- hosts: all
+  gather_facts: no
+
+  tasks:
+    - name: print out all parameters
+      command: echo "$@"
+      register: params
+      
+    - debug: var=params.stdout_lines
