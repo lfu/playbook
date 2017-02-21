@@ -1,0 +1,41 @@
+- hosts: all
+  gather_facts: no
+  connection: local
+
+  tasks:
+      # 1 Validate if extra params are not passed or blank
+    - name: validate extra vars parameter
+      fail: msg="Param1 is not passed or blank"
+      when: param1 is not defined or ( param1 is defined and param1 == "" )
+
+      # 2 register a variable when param1== install
+    - name: validate task if param1 value is install
+      command: echo 'TechieRoop'
+      register: installTrue
+      when: param1 is defined and param1 == 'install'
+
+      # 3 register a variable when param1 == remove
+    - name: validate task if param1 value is remove
+      command: echo 'param1 value is {{ param1 }}'
+      register: removeTrue
+      when: param1 is defined and param1 == 'remove'
+
+      # 4. If install is passed in extra vars param then execute this task.
+      # You can execute this task in #2 itself. this for demo purpose how you can register
+      # a variable and execute some based on varaible.
+    - name: Execute task if param1 == 'install'
+      command: echo 'Install task !!'
+      when: installTrue | changed
+
+      # 5. If remove is passed in extra vars param then execute this task.
+      # You can execute this task in #3 itself. this for demo purpose how you can register
+      # a variable and execute some based on varaible.
+    - name: Execute task if param1 == 'remove'
+      command: echo 'Remove task !!'
+      when: removeTrue | changed
+
+      # 6. Execute task based on output of some task
+      # This task execute when task #2 has output value 'TechieRoop'
+    - name: validate task if param1 value is install
+      command: echo "This task run if task 2 has value TechieRoop in output"
+      when: installTrue.stdout != '' and installTrue.stdout == 'TechieRoo
