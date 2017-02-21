@@ -14,6 +14,8 @@
       register: installTrue
       when: param1 is defined and param1 == 'install'
 
+    - debug: var=installTrue.stdout_lines
+
       # 3 register a variable when param1 == remove
     - name: validate task if param1 value is remove
       command: echo 'param1 value is {{ param1 }}'
