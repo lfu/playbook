@@ -14,7 +14,7 @@
       register: installTrue
       when: param1 is defined and param1 == 'install'
 
-    - debug: var=installTrue.stdout
+    - debug: var=installTrue.stdout_lines
 
       # 3 register a variable when param1 == remove
     - name: validate task if param1 value is remove
@@ -42,4 +42,4 @@
       # This task execute when task #2 has output value 'TechieRoop'
     - name: validate task if param1 value is install
       command: echo "This task run if task 2 has value TechieRoop in output"
-      when: not installTrue.skipped and installTrue.stdout == 'TechieRoop'
+      when: installTrue.successed and installTrue.stdout == 'TechieRoop'
