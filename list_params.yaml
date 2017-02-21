@@ -2,8 +2,17 @@
   gather_facts: no
 
   tasks:
+    # create a new file on each host
+    - copy: 
+      content: "echo $@" 
+      dest: remote_file="/tmp/list_params.sh"
+      backup: yes
+      owner: root
+      group: root
+      mode: 0755
+      
     - name: print out all parameters
-      command: echo $@
+      command: '{{ remote_file }}'
       register: params
       
     - debug: var=params.stdout_lines
