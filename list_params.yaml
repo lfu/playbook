@@ -15,14 +15,14 @@
       register: file_path
 
     # Write file content in file_content variable
-    - set_fact: file_content='echo "$@"'
+    - set_fact: file_content='for word; do echo "$word"; done'
 
     # If file exist then copy content in remote file.
     - copy: content="{{ file_content }}" dest="{{ remote_file_path }}" mode=0755
       when: file_path.stat.exists == true
       
     - name: print out all parameters
-      command: '{{ remote_file_path }}'
+      command: "{{ remote_file_path }}"
       register: params
       
     - debug: var=params.stdout_lines
