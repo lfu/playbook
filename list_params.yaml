@@ -15,7 +15,7 @@
       register: file_path
 
     # Write file content in file_content variable
-    - set_fact: file_content='for word; do echo "$word"; done'
+    - set_fact: file_content='#!/usr/bin/env bash\nfor word; do echo "$word"; done'
 
     # If file exist then copy content in remote file.
     - copy: content="{{ file_content }}" dest="{{ remote_file_path }}" mode=0755
