@@ -21,6 +21,8 @@
       command: echo 'param1 value is {{ param1 }}'
       register: removeTrue
       when: param1 is defined and param1 == 'remove'
+      
+    - debug: var=removeTrue.stdout_lines
 
       # 4. If install is passed in extra vars param then execute this task.
       # You can execute this task in #2 itself. this for demo purpose how you can register
