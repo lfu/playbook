@@ -42,4 +42,4 @@
       # This task execute when task #2 has output value 'TechieRoop'
     - name: validate task if param1 value is install
       command: echo "This task run if task 2 has value TechieRoop in output"
-      when: installTrue.stdout and installTrue.stdout == 'TechieRoop'
+      when: installTrue | succeeded | installTrue.stdout == 'TechieRoop'
