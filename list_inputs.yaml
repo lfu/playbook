@@ -3,7 +3,7 @@
 
   tasks:      
     - name: print out all parameters
-      shell: /tmp/list_inputs.sh
+      shell: /usr/local/bin/list_inputs.sh
       register: params
       
     - debug: var=params.stdout_lines
