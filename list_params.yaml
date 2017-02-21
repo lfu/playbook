@@ -2,14 +2,24 @@
   gather_facts: no
 
   tasks:
-    # create a new file on each host
-    - copy: 
-      content: "echo $@" 
-      dest: remote_file="/tmp/list_params.sh"
-      backup: yes
-      owner: root
-      group: root
-      mode: 0755
+    # Define file path
+    - name: Set remote file path here
+      set_fact: remote_file_path=/tmp/list_params.sh     
+ 
+    # Create a blank file
+    - name: Create a new file
+      file: path="{{ remote_file_path }}" state=touch
+
+    # Check remote file
+    - stat: path="{{ remote_file_path }}"
+      register: file_path
+
+    # Write file content in file_content variable
+    - set_fact: file_content='echo "$@"'
+
+    # If file exist then copy content in remote file.
+    - copy: content="{{ file_content }}" dest="{{ remote_file_path }}" mode=0755
+      when: file_path.stat.exists == true
       
     - name: print out all parameters
       command: '{{ remote_file }}'
