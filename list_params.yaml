@@ -3,7 +3,7 @@
 
   tasks:
     - name: print out all parameters
-      command: echo "$@"
+      command: echo $@
       register: params
       
     - debug: var=params.stdout_lines
