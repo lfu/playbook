@@ -3,7 +3,7 @@
 
   tasks:      
     - name: Copy and Execute the script to print out all parameters
-      script: /usr/local/bin/list_inputs.sh my_var
+      script: /usr/local/bin/list_inputs.sh {{ my_var }}
       register: params
       
     - debug: var=params.stdout_lines
