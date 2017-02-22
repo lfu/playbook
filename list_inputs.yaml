@@ -6,4 +6,4 @@
       script: /usr/local/bin/list_inputs.sh {{ my_var }}
       register: params
       
-    - debug: var=params.stdout_lines
+    - debug: var=params
