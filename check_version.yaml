@@ -1,0 +1,16 @@
+- hosts: all
+  gather_facts: no
+  vars: 
+    my_versions:
+      - name: version_1
+        version: 1
+        released: yes
+        license: abc
+      - name: version_2
+        version: 2
+        released: no
+        license: abcd
+
+  tasks:      
+    - debug: msg="{{ item }}"
+      with_items: 'my_versions[{{ number }}]'
