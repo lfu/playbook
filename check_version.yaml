@@ -13,4 +13,4 @@
 
   tasks:      
     - debug: msg="{{ item }}"
-      with_items: 'my_versions[{{ number }}]'
+      with_items: 'my_versions[{{ number|int }}]'
