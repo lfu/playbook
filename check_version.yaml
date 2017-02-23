@@ -16,4 +16,4 @@
     
     - name: check released version
       debug: msg={{ my_versions[number|int]["version"] }}
-      when: "{{ my_versions[number|int]["released"] }}" == true
+      when: "{{ my_versions[number|int]['released'] }}" == true
