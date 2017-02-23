@@ -12,4 +12,8 @@
         license: abcd
 
   tasks:      
-    - debug: msg="{{ my_versions[number|int] }}"
+    - debug: msg={{ my_versions[number|int] }}
+    
+    - name: check released version
+      debug: msg={{ my_versions[number|int]["version"] }}
+      when: "{{ my_versions[number|int]["released"] }}" == true
