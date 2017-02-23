@@ -18,4 +18,5 @@
     
     - name: check released version
       debug: msg={{ item.version }}
-      with_items: my_versions
+      with_items: "{{ my_versions }}"
+      when: "{{ item.released }}"
