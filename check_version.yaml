@@ -12,5 +12,4 @@
         license: abcd
 
   tasks:      
-    - debug: msg="{{ item }}"
-      with_items: '{{ my_versions[number|int] }}'
+    - debug: msg="{{ my_versions[number|int] }}"
