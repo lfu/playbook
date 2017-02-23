@@ -14,7 +14,8 @@
   tasks:      
     - set_fact: current={{ my_versions[number|int] }}
     
-    - debug: msg={{ current }}
+    - name: check the version specified
+      debug: msg={{ current }}
     
     - name: check released version
       debug: msg={{ item.version }}
