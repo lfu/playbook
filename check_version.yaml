@@ -18,4 +18,3 @@
     
     - name: check released version
       debug: msg={{ current.version }}
-      when: "{{ current.released }}" == true
