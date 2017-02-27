@@ -15,7 +15,7 @@
 
   tasks:
   - name: check postgresql
-    shell: `which yum` info postgresql
+    shell: "`which yum` info postgresql"
     
   - name: ensure that postgresql is started
     service: name=postgresql state=started
