@@ -3,7 +3,10 @@
 
   tasks:
   - name: ensure apache is at the latest version
-    yum: name=httpd.x86_64 state=latest
+    shell: yum info httpd
+    register: httpd_output
+    
+  - debug: msg="about httpd - {{ httpd_output }}"
     
   - name: ensure apache is running (and enable it at boot)
     service: name=httpd state=started enabled=yes
