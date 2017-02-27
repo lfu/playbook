@@ -2,15 +2,12 @@
 - hosts: server_55
 
   tasks:
-    - name: 1. install Apache
-      apt: name=apache2 state=present
-
-    - name: 2. install PHP module for Apache
-      apt: name=libapache2-mod-php5 state=present
-
-    - name: 3. start Apache
-      service: name=apache2 state=running enabled=yes
-
+  - name: ensure apache is at the latest version
+    yum: name=httpd.x86_64 state=latest
+    
+  - name: ensure apache is running (and enable it at boot)
+    service: name=httpd state=started enabled=yes
+    
 - hosts: server_56
 
   tasks:
