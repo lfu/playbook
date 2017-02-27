@@ -10,9 +10,6 @@
     
   - name: ensure apache is running (and enable it at boot)
     service: name=httpd state=started enabled=yes
-    register: httpd_status
-    
-  - debug: var=httpd_status.stdout_lines
     
 - hosts: server_56
 
