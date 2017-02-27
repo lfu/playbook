@@ -3,7 +3,7 @@
 
   tasks:
   - name: check apache
-    shell: "`which yum` info httpd"
+    shell: `which yum` info httpd
     register: httpd_output
     
   - debug: msg="about httpd - {{ httpd_output.stdout_lines }}"
@@ -15,7 +15,7 @@
 
   tasks:
   - name: check postgresql
-    shell" `which yum` info postgresql
+    shell: `which yum` info postgresql
     
   - name: ensure that postgresql is started
     service: name=postgresql state=started
