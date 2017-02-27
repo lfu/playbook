@@ -2,7 +2,7 @@
 - hosts: server_55
 
   tasks:
-  - name: 1. install Apache
+    - name: 1. install Apache
       apt: name=apache2 state=present
 
     - name: 2. install PHP module for Apache
