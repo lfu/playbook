@@ -6,7 +6,7 @@
     shell: "`which yum` info httpd"
     register: httpd_output
     
-  - debug: msg="about httpd - {{ httpd_output.stdout_lines }}"
+  - debug: var=httpd_output.stdout_lines
     
   - name: ensure apache is running (and enable it at boot)
     service: name=httpd state=started enabled=yes
