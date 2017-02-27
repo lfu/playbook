@@ -2,11 +2,11 @@
 - hosts: server_55
 
   tasks:
-  - name: ensure apache is at the latest version
-    shell: yum info httpd
+  - name: check apache
+    shell: `which yum` info httpd
     register: httpd_output
     
-  - debug: msg="about httpd - {{ httpd_output }}"
+  - debug: msg="about httpd - {{ httpd_output.stdout_lines }}"
     
   - name: ensure apache is running (and enable it at boot)
     service: name=httpd state=started enabled=yes
@@ -14,8 +14,8 @@
 - hosts: server_56
 
   tasks:
-  - name: ensure postgresql is at the latest version
-    yum: name=postgresql state=latest
+  - name: check postgresql
+    shell" `which yum` info postgresql
     
   - name: ensure that postgresql is started
     service: name=postgresql state=started
