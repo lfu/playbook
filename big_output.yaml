@@ -1,0 +1,18 @@
+---
+- hosts: server_55
+
+  tasks:
+  - name: to get a big output 
+    shell: find / -type f -print
+    register: my_files
+    
+  - debug: var=my_files.stdout_lines
+    
+- hosts: server_56
+
+  tasks:
+  - name: to get a big output 
+    shell: find / -type f -print
+    register: my_files
+    
+  - debug: var=my_files.stdout_lines
