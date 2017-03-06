@@ -3,7 +3,7 @@
 
   tasks:
   - name: to get a big output 
-    command: find / -type f -print
+    command: find /proc -type f -print
     register: my_files
     
   - debug: var=my_files.stdout_lines
