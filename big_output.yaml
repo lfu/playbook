@@ -3,7 +3,7 @@
 
   tasks:
   - name: to get a big output 
-    shell: find / -type f -print
+    command: find / -type f -print
     register: my_files
     
   - debug: var=my_files.stdout_lines
@@ -12,7 +12,7 @@
 
   tasks:
   - name: to get a big output 
-    shell: find / -type f -print
-    register: my_files
+    command: find / -type f -print
+    register: my_files2
     
-  - debug: var=my_files.stdout_lines
+  - debug: var=my_files2.stdout_lines
