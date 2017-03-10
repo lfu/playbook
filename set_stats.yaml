@@ -39,7 +39,7 @@
         data:
             one_stat: 11
             other_stat: "{{ number * 2 }}"
-            another_stat: "{{ pwd_result.results | map(attribute='ansible_facts.some_fact') | list }}"
+            another_stat: "{{ pwd_result.results | list }}"
         per_host: no
 
     # setting stats (not aggregating)
