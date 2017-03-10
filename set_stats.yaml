@@ -1,0 +1,27 @@
+- hosts: all
+  gather_facts: yes
+  vars: 
+    my_versions:
+      - name: version_1
+        version: 1
+        released: yes
+        license: abc
+      - name: version_2
+        version: 2
+        released: no
+        license: abcd
+
+  tasks:      
+    - set_fact: current={{ my_versions[number|int] }}
+    
+    - set_stats: foo = 'bar'
+    
+    - set_stats: "{{ current.soource }} = 'xxx'"
+    
+    - name: check the version specified
+      debug: msg={{ current }}
+    
+    - name: check released version
+      debug: msg={{ item.version }}
+      with_items: "{{ my_versions }}"
+      when: "{{ item.released }}"
