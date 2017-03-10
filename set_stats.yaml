@@ -16,8 +16,6 @@
     
     - set_stats: foo = 'bar'
     
-    - set_stats: "{{ current.soource }} = 'xxx'"
-    
     - name: check the version specified
       debug: msg={{ current }}
     
