@@ -31,19 +31,19 @@
       
     # Aggregating packages_installed stat per host
     - set_stats:
-      data:
-        packages_installed: 31
+        data:
+            packages_installed: 31
 
     # Aggregating random stats for all hosts using complex arguments
     - set_stats:
       data:
-        one_stat: 11
-        other_stat: "{{ number * 2 }}"
-        another_stat: "{{ pwd_result.results | map(attribute='ansible_facts.some_fact') | list }}"
+          one_stat: 11
+          other_stat: "{{ number * 2 }}"
+          another_stat: "{{ pwd_result.results | map(attribute='ansible_facts.some_fact') | list }}"
       per_host: no
 
     # setting stats (not aggregating)
     - set_stats:
-      data:
-        the_answer: 42
-      aggregate: no
+        data:
+            the_answer: 42
+        aggregate: no
