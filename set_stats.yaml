@@ -33,12 +33,15 @@
     - set_stats:
         data:
             packages_installed: 31
+            location: mahwah
+      register: stat1
 
     # setting stats (not aggregating)
     - set_stats:
         data:
             the_answer: 42
         aggregate: no
-      register: abc
+      register: stat2
         
-    - debug: var=abc
+    - debug: var=stat1
+    - debug: var=stat2
