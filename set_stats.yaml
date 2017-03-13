@@ -39,6 +39,6 @@
         data:
             the_answer: 42
         aggregate: no
-        register: abc
+      register: abc
         
-    - debug: msg={{ abc }}
+    - debug: var=abc
