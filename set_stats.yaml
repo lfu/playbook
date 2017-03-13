@@ -40,4 +40,3 @@
             the_answer: 42
         aggregate: no
         
-    - debug: msg={{ artifacts }}
