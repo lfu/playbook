@@ -40,4 +40,4 @@
             the_answer: 42
         aggregate: no
         
-    - debug: msg={{ packages_installed }}
+    - debug: msg={{ data }}
