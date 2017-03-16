@@ -30,6 +30,7 @@
     - set_stats:
         data:
             location: mahwah
+        aggregate: true    
         per_host: yes
       register: stat2
 
