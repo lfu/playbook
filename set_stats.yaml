@@ -27,7 +27,7 @@
     - set_stats:
         data:
             location: mahwah
-        per_host: yes
+        per_host: no
       register: stat2
 
     # setting stats (not aggregating)
