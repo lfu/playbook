@@ -31,7 +31,7 @@
         data:
             location: mahwah
         per_host: yes
-        register: stat2
+      register: stat2
 
     # setting stats (not aggregating)
     - set_stats:
