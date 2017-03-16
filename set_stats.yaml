@@ -17,31 +17,29 @@
     - set_stats: 
         data:
           foo: bar
-    
-    - command: pwd
-      register: pwd_result
-      
+       
     - name: check the version specified
       debug: msg={{ current }}
     
-    - name: check released version
-      debug: msg={{ item.version }}
-      with_items: "{{ my_versions }}"
-      when: "{{ item.released }}"
-      
     # Aggregating packages_installed stat per host
     - set_stats:
         data:
             packages_installed: 31
-            location: mahwah
       register: stat1
+      
+    - set_stats:
+        data:
+            location: mahwah
+        per_host: yes
+        register: stat2
 
     # setting stats (not aggregating)
     - set_stats:
         data:
             the_answer: 42
         aggregate: no
-      register: stat2
+      register: stat3
         
     - debug: var=stat1
     - debug: var=stat2
+    - debug: var=stat3
