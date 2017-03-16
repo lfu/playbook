@@ -13,11 +13,7 @@
 
   tasks:      
     - set_fact: current={{ my_versions[number|int] }}
-    
-    - set_stats: 
-        data:
-          foo: bar
-       
+          
     - name: check the version specified
       debug: msg={{ current }}
     
@@ -25,6 +21,7 @@
     - set_stats:
         data:
             packages_installed: 31
+            foo: bar
       register: stat1
       
     - set_stats:
