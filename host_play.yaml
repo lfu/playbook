@@ -1,0 +1,12 @@
+---
+- hosts: 10.8.99.207
+
+  tasks:
+  - name: check apache
+    shell: "`which yum` info httpd"
+    register: httpd_output
+    
+  - debug: var=httpd_output.stdout_lines
+    
+  - name: ensure apache is running (and enable it at boot)
+    service: name=httpd state=started enabled=yes
