@@ -1,3 +1,6 @@
+---
+- hosts: all
+
 vars:
     provider_id: "70000000000001"
     max_retries: 9
