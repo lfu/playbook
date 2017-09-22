@@ -5,14 +5,14 @@
     max_retries: 9
     retry_interval: 20
 
-   - name: Set the Provider URL
-      set_fact:
-        provider_url: "{{ manageiq.api_url }}/api/providers/{{ provider_id }}"
+  - name: Set the Provider URL
+    set_fact:
+    provider_url: "{{ manageiq.api_url }}/api/providers/{{ provider_id }}"
 
-    - name: Set the Service URL
-      set_fact:
-        svc_url: "/api/{{ manageiq.service }}"
+  - name: Set the Service URL
+    set_fact:
+      svc_url: "/api/{{ manageiq.service }}"
         
-    - debug: var=provider_url
+  - debug: var=provider_url
     
-    - debug: var=svc_url
+  - debug: var=svc_url
