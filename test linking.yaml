@@ -1,7 +1,6 @@
----
 - hosts: all
 
-vars:
+  vars:
     provider_id: "70000000000001"
     max_retries: 9
     retry_interval: 20
