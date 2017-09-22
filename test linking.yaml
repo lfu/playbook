@@ -7,11 +7,11 @@
 
     - name: Set the Provider URL
       set_fact:
-      provider_url: "{{ manageiq.api_url }}/api/providers/{{ provider_id }}"
+        provider_url: "{{ manageiq.api_url }}/api/providers/{{ provider_id }}"
 
     - name: Set the Service URL
       set_fact:
-      svc_url: "/api/{{ manageiq.service }}"
+        svc_url: "/api/{{ manageiq.service }}"
         
     - debug: var=provider_url
     
