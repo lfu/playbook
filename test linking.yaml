@@ -9,11 +9,13 @@
     - name: Set the Provider URL
       set_fact:
         provider_url: "{{ manageiq.api_url }}/api/providers/{{ provider_id }}"
-
-    - name: Set the Service URL
-      set_fact:
-        svc_url: "/api/{{ manageiq.service }}"
-        
     - debug: var=provider_url
     
+    - name: Set the Service URL
+      set_fact:
+        svc_url: "/api/{{ manageiq.service }}"    
     - debug: var=svc_url
+    
+    - name: set the uuid to match
+      set_fact: new_vm_uuid="8e9eaf5d-c8f9-4947-8a74-61f5bcaaa1d6"
+    - debug: var=new_vm_uuid
