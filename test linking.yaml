@@ -29,6 +29,7 @@
         vms: "{{ vms|default([]) + [ { 'href': svc_url, 'resource':  { 'href': item } } ] }}"
       with_items:
         - "{{ cf_vm_href }}"
+    - debug: var=vms
         
     - name: Register vm with the service
       uri:
