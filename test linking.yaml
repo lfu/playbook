@@ -19,9 +19,30 @@
         body_format: json
         return_content: yes
       register: token_output
-
     - debug: var=token_output
 
     - set_fact: cf_vm_href="{{ token_output.json.resources[0].href }}"
-
     - debug: var=cf_vm_href
+
+    - name: Create an array of vms
+      set_fact:
+        vms: "{{ vms|default([]) + [ { 'href': svc_url, 'resource':  { 'href': item } } ] }}"
+      with_items:
+        - "{{ cf_vm_href }}"
+        
+    - name: Register vm with the service
+      uri:
+        url: "{{ manageiq.api_url }}/api/services"
+        method: POST
+        body_format: json
+        body:
+          action: add_resource
+          resources : "{{ vms }}"
+        validate_certs: False
+        headers:
+          X-Auth-Token: "{{ manageiq.api_token }}"
+          Content-Type: "application/json"
+        status_code: 200
+      register: output
+
+    - debug: var=output.json.results[0].success
