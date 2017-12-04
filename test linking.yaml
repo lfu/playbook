@@ -7,7 +7,7 @@
     - debug: var=svc_url
     
     - name: set the uuid to match
-      set_fact: new_vm_uuid="8e9eaf5d-c8f9-4947-8a74-61f5bcaaa1d6"
+      set_fact: new_vm_uuid="423cdba2-831a-2044-fea1-2d6f98580c2c"
     - debug: var=new_vm_uuid
 
     - set_fact: find_vm_url="{{ manageiq.api_url }}/api/vms?expand=resources&attributes=href,uid_ems&filter[]=uid_ems='{{ new_vm_uuid }}'"
