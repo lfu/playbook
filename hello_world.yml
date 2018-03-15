@@ -4,3 +4,7 @@
     - name: Hello Message
       debug:
         msg: "Hello World!"
+
+    - name: scret is here
+      debug:
+        msg: {{ VaultCredential }}
