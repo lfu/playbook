@@ -1,4 +1,5 @@
-- hosts: all
+- name: check version
+  hosts: all
   gather_facts: yes
   vars: 
     my_versions:
