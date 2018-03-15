@@ -1,5 +1,6 @@
----
-- hosts: all
+
+- play 1
+  hosts: all
 
   tasks:
   - name: check apache
@@ -11,7 +12,8 @@
   - name: ensure apache is running (and enable it at boot)
     service: name=httpd state=started enabled=yes
     
-- hosts: all
+- play 2
+  hosts: all
 
   tasks:
   - name: check postgresql
