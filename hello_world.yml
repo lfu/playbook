@@ -7,4 +7,4 @@
 
     - name: scret is here
       debug:
-        msg: {{ VaultCredential }}
+        msg: "{{ VaultCredential }}"
