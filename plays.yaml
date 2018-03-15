@@ -23,4 +23,4 @@
   - debug: var=sql_output.stdout_lines
     
   - name: ensure that postgresql is started
-    service: name=rh-postgresql94-postgresql state=started
+    service: name=rh-postgresql95-postgresql state=started
