@@ -17,7 +17,7 @@
 
   tasks:
   - name: check postgresql
-    shell: "`which yum` info rh-postgresql94-postgresql"
+    shell: "`which yum` info rh-postgresql95-postgresql"
     register: sql_output
     
   - debug: var=sql_output.stdout_lines
