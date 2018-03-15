@@ -1,5 +1,5 @@
 
-- play 1
+- name: play 1
   hosts: all
 
   tasks:
@@ -12,7 +12,7 @@
   - name: ensure apache is running (and enable it at boot)
     service: name=httpd state=started enabled=yes
     
-- play 2
+- name: play 2
   hosts: all
 
   tasks:
