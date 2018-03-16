@@ -1,10 +1,12 @@
 - name: Hello World Sample
   hosts: all
   tasks:
+    - include_vars: "vaulted.yml"
+    
     - name: Hello Message
       debug:
         msg: "Hello World!"
 
     - name: scret is here
       debug:
-        msg: "{{ vault_credential.vault_password }}"
+        msg: "{{ test }}"
