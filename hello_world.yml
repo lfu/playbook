@@ -1,12 +1,6 @@
 - name: Hello World Sample
-  hosts: all
+  hosts: localhost
   tasks:
-    - include_vars: "vaulted.yml"
-    
     - name: Hello Message
       debug:
         msg: "Hello World!"
-
-    - name: scret is here
-      debug:
-        msg: "{{ test }}"
