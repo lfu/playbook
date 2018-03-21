@@ -1,0 +1,7 @@
+---
+- hosts: localhost
+  gather_facts: false
+  tasks:
+    - include_vars: "vaulted.yml"
+    - debug:
+        msg: '{{ test }}'
