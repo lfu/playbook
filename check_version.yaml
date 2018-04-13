@@ -6,11 +6,23 @@
       - name: version_1
         version: 1
         released: yes
-        license: abc
+        license: a
       - name: version_2
         version: 2
-        released: no
+        released: yes
+        license: ab
+      - name: version_3
+        version: 3
+        released: yes
+        license: abc
+      - name: version_4
+        version: 4
+        released: yes
         license: abcd
+      - name: version_5
+        version: 5
+        released: no
+        license: abcde 
 
   tasks:      
     - set_fact: current={{ my_versions[number|int] }}
