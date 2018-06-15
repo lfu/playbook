@@ -1,4 +1,5 @@
 - hosts: localhost
+  gather_facts: yes
   tasks:
     - name: "Get test results from the web"
       uri:
