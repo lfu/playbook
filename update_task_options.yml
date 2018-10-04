@@ -1,6 +1,5 @@
 ---
 # Playbook to set a user message in the MiqRequestTask
-# You can pass in extra vars to control the task_href_slug
 - hosts: localhost
   vars:
     options: { 'name': 'Fred Flintstone', 'address': 'Bedrock' }
