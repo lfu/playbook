@@ -7,7 +7,7 @@
 #
 #   ansible-playbook vars.yml -e 'hosts=localhost'
 #
-- hosts: "{{ hosts }}"
+- hosts: all
   tasks:
     - debug: var=vars
     - debug: var=hostvars[inventory_hostname]
