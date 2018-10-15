@@ -2,7 +2,7 @@
 # Playbook to set a user message in the MiqRequestTask
 - hosts: localhost
   vars:
-    user_message: 'hi from ansible playbook'
+    options: { 'user_message': 'hi from ansible playbook' }
 
   tasks:
     - name: Set the task url
@@ -15,7 +15,7 @@
         method: POST
         body:
           action: edit
-          resource: "{ 'user_message': {{ user_message }}}"
+          resource: "{ 'options': {{ options }}}"
         body_format: json
         validate_certs: False
         headers:
