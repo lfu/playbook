@@ -2,7 +2,8 @@
 # Playbook to set a user message in the MiqRequestTask
 - hosts: localhost
   vars:
-    options: { 'name': 'Fred Flintstone', 'address': 'Bedrock' }
+    options: { 'name': 'Fred Flintstone', 'address': 'Bedrock', 'user_message': 'hi from ansible playbook' }
+    
 
   tasks:
     - name: Set the task url
