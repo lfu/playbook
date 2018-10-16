@@ -8,10 +8,28 @@
     - name: Set the task url
       set_fact:
         task_url: "{{ manageiq.api_url }}/api/{{ manageiq.request_task }}"
+        request_url: "{{ manageiq.api_url }}/api/{{ manageiq.request }}"
 
     - name: Set the user message in the task
       uri:
         url: "{{ task_url }}"
+        method: POST
+        body:
+          action: edit
+          resource: "{ 'options': {{ options }}}"
+        body_format: json
+        validate_certs: False
+        headers:
+          X-Auth-Token: "{{ manageiq.api_token }}"
+          Content-Type: "application/json" 
+        status_code: 200
+      register: output
+      
+    - debug: var=output
+    
+    - name: Set the user message in the request
+      uri:
+        url: "{{ request_url }}"
         method: POST
         body:
           action: edit
