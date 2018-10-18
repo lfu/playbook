@@ -25,3 +25,6 @@
       register: output
       
     - debug: var=output
+    
+    - pause:
+        minutes: 1
