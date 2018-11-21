@@ -26,5 +26,4 @@
       
     - debug: var=output
     
-    - pause:
-        minutes: 1
+    - debug: var=manageiq.service
