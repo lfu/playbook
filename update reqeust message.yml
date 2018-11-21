@@ -26,4 +26,4 @@
       
     - debug: var=output
     
-    - debug: var=manageiq.service
+    - debug: var=manageiq
