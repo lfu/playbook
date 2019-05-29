@@ -23,5 +23,4 @@
         {{ hostvars | to_nice_json }} 
 
   tasks:
-    - debug: msg="{{ msg.split('\n') }}"       
-    - tags: debug_info
+    - debug: msg="{{ msg.split('\n') }}"
