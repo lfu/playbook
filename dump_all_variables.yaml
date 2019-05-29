@@ -1,5 +1,6 @@
 ---
 - name: Print some debug information 
+  hosts: all
   vars: 
     msg: |
         Module Variables ("vars"):
