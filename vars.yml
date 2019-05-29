@@ -9,6 +9,5 @@
 #
 - hosts: all
   tasks:
-    - debug: var=from_input1
     - debug: var=vars
     - debug: var=hostvars[inventory_hostname]
