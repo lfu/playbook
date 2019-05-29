@@ -9,6 +9,6 @@
 #
 - hosts: all
   tasks:
-    - debug: var=miq_test1
+    - debug: var=from_input1
     - debug: var=vars
     - debug: var=hostvars[inventory_hostname]
