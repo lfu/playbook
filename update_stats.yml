@@ -34,4 +34,4 @@
         data: 
           root_attrs: "{{ root_attrs }}"
           state_attrs: "{{ state_attrs }}"
-          from_update_workspace: "{{ output.value }}"
+          from_update_workspace: "{{ output }}"
