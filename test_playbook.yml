@@ -5,3 +5,9 @@
     - include_vars: "vaulted.yml"
     - debug:
         msg: '{{ test }}'
+        
+    - name: "Artifact data of test results"
+      set_stats:
+        data: 
+          state_attrs: "{{ test }}"
+          from_playbook: "{{ test }}"
