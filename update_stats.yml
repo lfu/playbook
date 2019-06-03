@@ -1,6 +1,6 @@
 ---
 #
-# copy of https://github.com/mkanoor/playbook/blob/master/update_automate_workspace.yml
+# Based on https://github.com/mkanoor/playbook/blob/master/update_automate_workspace.yml
 #
 # Playbook to update attributes in the root object in automate workspace
 # You can pass in extra vars to control the automate_workspace
@@ -29,7 +29,7 @@
         status_code: 200
       register: output
       
-    - name: "Artifact URL of test results to Tower Workflows"
+    - name: "Artifact data of test results to Tower Workflows"
       set_stats:
         data: 
           root_attrs: "{{ root_attrs }}"
