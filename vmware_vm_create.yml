@@ -16,3 +16,4 @@
       state: poweredon
       cluster: "{{ cluster_name }}"
       wait_for_ip_address: yes
+      delegate_to: localhost 
