@@ -1,8 +1,0 @@
----
-- hosts: all
-  tasks:
-    - name: print command output
-      command: ls /
-      register: out
-
-    - debug: var=out.stdout_lines
