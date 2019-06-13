@@ -1,9 +1,0 @@
-- hosts: all
-  gather_facts: no
-
-  tasks:      
-    - name: echo out all parameters
-      command: echo {{ my_var }}
-      register: params
-      
-    - debug: var=params
