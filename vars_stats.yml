@@ -11,7 +11,8 @@
     - name: "Artifact data of test results to next playbook"
       set_stats:
         data:
-          miq_attrs: {'name': 'Fred Flintstone', 'address': 'Bedrock'}
+          miq_attrs: "something"
+          ip_address: "1.2.3.4"
 
     - debug: var=miq_data
     - debug: var=vars
