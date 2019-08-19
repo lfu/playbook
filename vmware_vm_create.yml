@@ -10,7 +10,7 @@
       password: "{{ vcenter_password }}"
       validate_certs: False
       name: lucy_test_vm
-      template: lucy-template-5.10.6.0
+      template: lucy-template
       datacenter: "{{ datacenter_name }}"
       folder: /lucy
       state: poweredon
