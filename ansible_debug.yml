@@ -1,0 +1,7 @@
+- name: show debug
+  hosts: all
+  connection: local
+  tasks:
+  - name: debug
+    debug:
+      msg: "{{ hostvars }}"
