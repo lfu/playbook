@@ -7,6 +7,6 @@
       debug:
         msg: "Hello World!"
 
-    - name: scret is here
+    - name: vault scret is here
       debug:
         msg: "{{ test }}"
