@@ -13,6 +13,8 @@
         data:
           miq_attrs: "something"
           ip_address: "1.2.3.4"
+          miq_provision__status: "Warn"
+          miq_provision__options__config_info__be__very__deep: true
 
     - debug: var=miq_data
     - debug: var=vars
