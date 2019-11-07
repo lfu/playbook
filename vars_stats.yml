@@ -14,7 +14,8 @@
           miq_attrs: "something"
           ip_address: "1.2.3.4"
           service_template_provision_task__status: "Warn"
-          service_template_provision_task__options__config_info__be__very__deep: true
+          service_template_provision_task__options__config_info__active: true
+          service_var__info: "variable set from playbook"
 
     - debug: var=miq_data
     - debug: var=vars
